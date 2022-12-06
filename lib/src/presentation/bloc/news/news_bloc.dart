@@ -12,7 +12,7 @@ part 'news_bloc.freezed.dart';
 class NewsBloc extends Bloc<NewsEvent, NewsState> {
   final ArticleUC articleUC;
   NewsBloc({required this.articleUC}) : super(const _State()) {
-    on<NewsEvent>((event, emit) async {
+    on<Get>((event, emit) async {
       emit(state.copyWith(status: Status.loading));
       try {
         final List<Article> articles = await articleUC.getArtticles();
