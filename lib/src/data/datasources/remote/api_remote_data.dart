@@ -7,17 +7,13 @@ abstract class ApiRemote {
 }
 
 class NewsApi implements ApiRemote {
-  final Dio dio;
-
-  NewsApi({required this.dio});
-
   @override
   Future<List<Article>> getArticles() async {
-    final response = await dio.get(kApiUrl,
+    final response = await Dio().get(kApiUrl,
         options: Options(headers: {'X-Api-Key': kApiKey}),
         queryParameters: {
           'q': 'bitcoin',
-          'pageSize': 2,
+          'pageSize': 20,
         });
     if (response.statusCode == 200) {
       final List<Article> result = (response.data['articles'] as List)
