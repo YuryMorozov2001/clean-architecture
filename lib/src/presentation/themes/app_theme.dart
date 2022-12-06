@@ -7,6 +7,7 @@ class AppTheme {
       appBarTheme: AppBarTheme(
         color: Colors.green[100],
       ),
+      cardColor: const Color(0xFFE4FAE6),
     );
   }
 }
