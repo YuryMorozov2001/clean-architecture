@@ -7,5 +7,6 @@ enum Status {
   final String description;
   const Status(this.description);
 
-  bool isCompleted() => this == completed || this == failed;
+  bool isCompleted() => this == completed;
+  bool isLoading() => this == loading;
 }
