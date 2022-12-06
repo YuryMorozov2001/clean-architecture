@@ -20,7 +20,7 @@ Article _$ArticleFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Article {
-  String get author => throw _privateConstructorUsedError;
+  String? get author => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'urlToImage')
@@ -37,7 +37,7 @@ abstract class $ArticleCopyWith<$Res> {
       _$ArticleCopyWithImpl<$Res, Article>;
   @useResult
   $Res call(
-      {String author,
+      {String? author,
       String title,
       String description,
       @JsonKey(name: 'urlToImage') String? imageUrl});
@@ -56,16 +56,16 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? author = null,
+    Object? author = freezed,
     Object? title = null,
     Object? description = null,
     Object? imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      author: null == author
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -90,7 +90,7 @@ abstract class _$$_ArticleCopyWith<$Res> implements $ArticleCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String author,
+      {String? author,
       String title,
       String description,
       @JsonKey(name: 'urlToImage') String? imageUrl});
@@ -106,16 +106,16 @@ class __$$_ArticleCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? author = null,
+    Object? author = freezed,
     Object? title = null,
     Object? description = null,
     Object? imageUrl = freezed,
   }) {
     return _then(_$_Article(
-      author: null == author
+      author: freezed == author
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -145,7 +145,7 @@ class _$_Article implements _Article {
       _$$_ArticleFromJson(json);
 
   @override
-  final String author;
+  final String? author;
   @override
   final String title;
   @override
@@ -193,7 +193,7 @@ class _$_Article implements _Article {
 
 abstract class _Article implements Article {
   const factory _Article(
-      {required final String author,
+      {required final String? author,
       required final String title,
       required final String description,
       @JsonKey(name: 'urlToImage') final String? imageUrl}) = _$_Article;
@@ -201,7 +201,7 @@ abstract class _Article implements Article {
   factory _Article.fromJson(Map<String, dynamic> json) = _$_Article.fromJson;
 
   @override
-  String get author;
+  String? get author;
   @override
   String get title;
   @override

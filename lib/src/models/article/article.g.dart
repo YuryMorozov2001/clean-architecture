@@ -7,7 +7,7 @@ part of 'article.dart';
 // **************************************************************************
 
 _$_Article _$$_ArticleFromJson(Map<String, dynamic> json) => _$_Article(
-      author: json['author'] as String,
+      author: json['author'] as String?,
       title: json['title'] as String,
       description: json['description'] as String,
       imageUrl: json['urlToImage'] as String?,
