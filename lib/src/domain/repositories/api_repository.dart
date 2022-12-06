@@ -1,3 +1,5 @@
+import '../../models/article/article.dart';
+
 abstract class ApiRepository {
-  Future getArticles();
+  Future<List<Article>> getArticles();
 }
