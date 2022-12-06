@@ -192,14 +192,14 @@ class _$NewsStateCopyWithImpl<$Res, $Val extends NewsState>
   @override
   $Res call({
     Object? articles = freezed,
-    Object? status = freezed,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
       articles: freezed == articles
           ? _value.articles
           : articles // ignore: cast_nullable_to_non_nullable
               as List<Article>?,
-      status: freezed == status
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
@@ -227,14 +227,14 @@ class __$$_StateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? articles = freezed,
-    Object? status = freezed,
+    Object? status = null,
   }) {
     return _then(_$_State(
       articles: freezed == articles
           ? _value._articles
           : articles // ignore: cast_nullable_to_non_nullable
               as List<Article>?,
-      status: freezed == status
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
@@ -273,14 +273,12 @@ class _$_State implements _State {
         (other.runtimeType == runtimeType &&
             other is _$_State &&
             const DeepCollectionEquality().equals(other._articles, _articles) &&
-            const DeepCollectionEquality().equals(other.status, status));
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_articles),
-      const DeepCollectionEquality().hash(status));
+      runtimeType, const DeepCollectionEquality().hash(_articles), status);
 
   @JsonKey(ignore: true)
   @override
